@@ -5,17 +5,17 @@ body {
 }
 
 .topbar {
-  position: fixed;
-  top: 18px;
-  left: 20px;
+  position: relative;
+  margin: 24px auto 10px;
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 14px;
-  z-index: 9999;
+  justify-content: center;   /* centers logo + text as one block */
+  gap: 18px;
 }
 
 .logo {
-  height: 44px;
+  height: 78px;     /* BIG logo */
 }
 
 .stage {
