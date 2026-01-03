@@ -4,36 +4,74 @@ body {
   background: #f3f6fb;
 }
 
+/* ===== HEADER LAYOUT ===== */
 .topbar {
-  position: relative;
-  margin: 24px auto 10px;
+  position: fixed;
+  top: 18px;
+  left: 0;
   width: 100%;
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;   /* left | center | right (balance) */
+  align-items: start;
+  z-index: 9999;
+}
+
+/* LEFT – LOGO */
+.topbar-left {
+  padding-left: 24px;
   display: flex;
-  align-items: center;
-  justify-content: center;   /* centers logo + text as one block */
-  gap: 18px;
+  align-items: flex-start;
 }
 
 .logo {
-  height: 78px;     /* BIG logo */
-}
-.topbar span {
-  font-size: 26px;
-  font-weight: 700;
-  color: #1b1f2a;
-  letter-spacing: 0.4px;
+  height: 88px;   /* BIGGER logo */
+  width: auto;
 }
 
-.topbar::after {
-  content: "";
-  position: absolute;
-  bottom: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 160px;
-  height: 3px;
-  border-radius: 2px;
-  background: linear-gradient(90deg,#ff7a00,#ffb347);
+/* CENTER – TITLES */
+.topbar-center {
+  text-align: center;
+  padding-top: 6px;
+}
+
+.topbar-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1b1f2a;
+  letter-spacing: 0.4px;
+  line-height: 1.1;
+}
+
+.topbar-subtitle {
+  font-size: 38px;     /* BIGGER than title */
+  font-weight: 900;
+  color: #1b1f2a;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+/* LONG SEPARATOR (same width as carousel/card) */
+.topbar-divider {
+  width: 800px;   /* must match .card width */
+  height: 4px;
+  margin: 14px auto 0 auto;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#ff7a00,#ffb347,#ff7a00);
+}
+
+/* RIGHT – EMPTY BALANCER */
+.topbar-right {
+  width: 100%;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .topbar {
+    grid-template-columns: 120px 1fr 120px;
+  }
+  .logo { height: 64px; }
+  .topbar-divider { width: 92vw; }
 }
 
 .stage {
