@@ -4,16 +4,23 @@ body {
   background: #f3f6fb;
 }
 
-/* ===== HEADER LAYOUT ===== */
+/* ===== HEADER ===== */
 .topbar {
   position: fixed;
   top: 18px;
   left: 0;
   width: 100%;
   display: grid;
-  grid-template-columns: 220px 1fr 220px;   /* left | center | right (balance) */
+  grid-template-columns: 220px 1fr 220px; /* left | center | right */
   align-items: start;
   z-index: 9999;
+  pointer-events: none; /* avoids blocking clicks below */
+}
+
+.topbar-left,
+.topbar-center,
+.topbar-right {
+  pointer-events: auto;
 }
 
 /* LEFT – LOGO */
@@ -24,7 +31,7 @@ body {
 }
 
 .logo {
-  height: 88px;   /* BIGGER logo */
+  height: 96px; /* bigger logo */
   width: auto;
 }
 
@@ -35,27 +42,27 @@ body {
 }
 
 .topbar-title {
-  font-size: 30px;
-  font-weight: 800;
+  font-size: 34px;
+  font-weight: 900;
   color: #1b1f2a;
   letter-spacing: 0.4px;
   line-height: 1.1;
 }
 
 .topbar-subtitle {
-  font-size: 38px;     /* BIGGER than title */
+  font-size: 42px; /* bigger than title */
   font-weight: 900;
   color: #1b1f2a;
   letter-spacing: 0.5px;
   line-height: 1.1;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
-/* LONG SEPARATOR (same width as carousel/card) */
+/* SINGLE LONG SEPARATOR */
 .topbar-divider {
-  width: 800px;   /* must match .card width */
+  width: 800px; /* must match .card width */
   height: 4px;
-  margin: 14px auto 0 auto;
+  margin: 16px auto 0;
   border-radius: 999px;
   background: linear-gradient(90deg,#ff7a00,#ffb347,#ff7a00);
 }
@@ -65,48 +72,34 @@ body {
   width: 100%;
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .topbar {
-    grid-template-columns: 120px 1fr 120px;
-  }
-  .logo { height: 64px; }
-  .topbar-divider { width: 92vw; }
-}
-
+/* ===== PAGE LAYOUT ===== */
 .stage {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* This creates space so the fixed header never touches the card */
+  padding-top: 190px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
 }
 
 .card {
   background: white;
-  padding: 40px;
+  padding: 44px 44px 42px;
   border-radius: 20px;
   width: 800px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
 
-.carousel-placeholder {
-  margin-top: 30px;
-  border: 3px dashed #ccc;
-  border-radius: 16px;
-  height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #777;
-  font-size: 18px;
-}
-/* --- Carousel --- */
+/* ===== CAROUSEL ===== */
 .carousel {
-  margin: 22px auto 0;
+  margin: 26px auto 0;
   width: 100%;
-  max-width: 680px;
-  height: 420px;              /* controls visual size */
+  max-width: 720px;
+  height: 420px;
   position: relative;
   overflow: hidden;
   border-radius: 18px;
@@ -119,9 +112,9 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;         /* keeps full image visible */
+  object-fit: contain;
   opacity: 0;
-  transform: scale(0.98);
+  transform: scale(0.985);
   transition: opacity 600ms ease, transform 600ms ease;
   pointer-events: none;
 }
@@ -130,42 +123,40 @@ body {
   opacity: 1;
   transform: scale(1);
 }
-.topbar {
-  position: fixed;
-  top: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  align-items: center;
-  z-index: 9999;
-}
 
-.topbar-text {
-  text-align: center;
-}
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .topbar {
+    grid-template-columns: 120px 1fr 120px;
+  }
 
-.topbar-title {
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-}
+  .logo {
+    height: 72px;
+  }
 
-.topbar-subtitle {
-  font-size: 20px;
-  font-weight: 600;
-  opacity: 0.8;
-  margin-top: 4px;
-}
+  .topbar-title {
+    font-size: 22px;
+  }
 
-.topbar-divider {
-  width: 800px;          /* same width as carousel/card */
-  height: 2px;
-  background: linear-gradient(90deg,#ff8a00,#ffb347,#ff8a00);
-  border-radius: 2px;
-  margin: 14px auto 0 auto;
-}
+  .topbar-subtitle {
+    font-size: 28px;
+  }
 
-.logo {
-  height: 64px;         /* bigger logo */
+  .topbar-divider {
+    width: 92vw;
+  }
+
+  .stage {
+    padding-top: 160px;
+  }
+
+  .card {
+    width: 92vw;
+    padding: 28px;
+  }
+
+  .carousel {
+    max-width: 92vw;
+    height: 320px;
+  }
 }
