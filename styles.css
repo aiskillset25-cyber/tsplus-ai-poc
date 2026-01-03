@@ -17,6 +17,12 @@ body {
 .logo {
   height: 78px;     /* BIG logo */
 }
+.topbar span {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1b1f2a;
+  letter-spacing: 0.4px;
+}
 
 .stage {
   min-height: 100vh;
