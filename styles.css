@@ -92,3 +92,42 @@ body {
   opacity: 1;
   transform: scale(1);
 }
+.topbar {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  align-items: center;
+  z-index: 9999;
+}
+
+.topbar-text {
+  text-align: center;
+}
+
+.topbar-title {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+.topbar-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.topbar-divider {
+  width: 800px;          /* same width as carousel/card */
+  height: 2px;
+  background: linear-gradient(90deg,#ff8a00,#ffb347,#ff8a00);
+  border-radius: 2px;
+  margin: 14px auto 0 auto;
+}
+
+.logo {
+  height: 64px;         /* bigger logo */
+}
