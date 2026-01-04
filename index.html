@@ -9,36 +9,52 @@
 
 <body>
   <header class="topbar">
-  <div class="topbar-inner">
-    <div class="topbar-left">
-      <img src="tsplus-logo-square-gray-gradient-135x180.png" class="logo" alt="TSplus">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <img src="tsplus-logo-square-gray-gradient-135x180.png" class="logo" alt="TSplus">
+      </div>
+
+      <div class="topbar-center">
+        <div class="topbar-title">TSplus AI Support Brain</div>
+        <div class="topbar-subtitle">Proof of Concept</div>
+      </div>
+
+      <div class="topbar-right"></div>
     </div>
 
-    <div class="topbar-center">
-      <div class="topbar-title">TSplus AI Support Brain</div>
-      <div class="topbar-subtitle">Proof of Concept</div>
-    </div>
-
-    <div class="topbar-right"></div>
-  </div>
-
-  <div class="topbar-divider"></div>
-</header>
-
+    <div class="topbar-divider"></div>
+  </header>
 
   <main class="stage">
     <div class="card">
       <h1>TSplus Support Brain (PoC)</h1>
       <p>This page hosts the demo chat widget and visuals for the proof-of-concept.</p>
 
-     <div class="carousel" aria-label="TSplus PoC carousel">
-  <img src="slide-1.png.png" class="slide active" alt="TSplus PoC slide 1">
-  <img src="slide-2.png.png" class="slide" alt="TSplus PoC slide 2">
-  <img src="slide-3.png.png" class="slide" alt="TSplus PoC slide 3">
-</div>
+      <div class="carousel" aria-label="TSplus PoC carousel">
+        <img src="slide-1.png.png" class="slide active" alt="TSplus PoC slide 1">
+        <img src="slide-2.png.png" class="slide" alt="TSplus PoC slide 2">
+        <img src="slide-3.png.png" class="slide" alt="TSplus PoC slide 3">
+      </div>
+    </div>
   </main>
 
-  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="b1bbdf0d-3f15-4ec5-8dfc-6e61337e5309";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+  <!-- Chatwoot widget -->
+  <script>
+    (function(d,t) {
+      var BASE_URL="https://app.chatwoot.com";
+      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=BASE_URL+"/packs/js/sdk.js";
+      g.async = true;
+      s.parentNode.insertBefore(g,s);
+      g.onload=function(){
+        window.chatwootSDK.run({
+          websiteToken: 'TbQi4XzRYKTb2GffjD69dtQX',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document,"script");
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
