@@ -1,4 +1,4 @@
-:root{
+f:root{
   --card-width: 800px;
   --accent1: #ff7a00;
   --accent2: #ffb347;
@@ -128,6 +128,9 @@ body{
   .topbar{
     padding: 14px 0 8px;
   }
+.topbar-center {
+  padding-left: 64px;
+}
 
   .topbar-inner{
     max-width: 100%;
