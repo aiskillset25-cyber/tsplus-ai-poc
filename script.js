@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Find ALL carousels on the page (top + Omnilingual)
+  // Both carousels use the same structure: .carousel > img.slide
   const carousels = document.querySelectorAll(".carousel");
 
   carousels.forEach((carousel) => {
     const slides = carousel.querySelectorAll(".slide");
-    if (!slides.length) return;
+    if (slides.length === 0) return;
 
     let i = 0;
 
-    // Ensure each carousel starts with only its first slide active
-    slides.forEach((s, idx) => s.classList.toggle("active", idx === 0));
+    // Make sure only the first slide is active in THIS carousel
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle("active", idx === 0);
+    });
 
     setInterval(() => {
       slides[i].classList.remove("active");
