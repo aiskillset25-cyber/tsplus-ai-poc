@@ -286,7 +286,7 @@ body{
   position: fixed;
   right: 84px;
   bottom: 84px;
-  width: 88px;   /* 1.5× chat widget size */
+  width: 150px;   /* 1.5× chat widget size */
   height: auto;
   z-index: 99999;
   pointer-events: none;
