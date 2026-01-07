@@ -211,7 +211,7 @@ body{
   position: fixed;
   right: 92px;
   bottom: 18px;
-  width: 350px;          /* ← was 200px */
+  width: 500px;          /* ← was 200px */
   height: auto;
   z-index: 99999;
   pointer-events: none;
