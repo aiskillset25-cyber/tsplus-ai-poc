@@ -204,49 +204,50 @@ body{
 }
 
 /* =========================================
-   MASCOT WRAP (CLIPPED + STABLE NEXT TO CHAT)
+   MASCOT (SMALL, NEXT TO CHATWOOT, CLIPPED)
    ========================================= */
 
+/* The visible box (roughly 2× the Chatwoot button) */
 #widget-mascot-wrap{
   position: fixed;
-  right: 92px;
-  bottom: 18px;
-  width: 110px;
-  height: 110px;
+  right: 84px;          /* left of Chatwoot icon */
+  bottom: 22px;         /* aligned with icon */
+  width: 92px;
+  height: 92px;
   z-index: 99999;
   pointer-events: none;
-  overflow: hidden;
-  border-radius: 16px;
-  animation: widgetFloat 2.6s ease-in-out infinite;
+  overflow: hidden;     /* CLIPS the big PNG */
+  border-radius: 18px;
+  animation: widgetFloat 2.4s ease-in-out infinite;
 }
 
-/* The big PNG inside: position so only robot shows */
+/* The big PNG inside (we crop it to show the robot) */
 #widget-mascot-img{
   position: absolute;
-  left: -10px;
-  bottom: -6px;
-  width: 260px;
+  left: -12px;          /* crop X */
+  bottom: -10px;        /* crop Y */
+  width: 210px;         /* keep big, but clipped */
   height: auto;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.22));
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.18));
 }
 
 @keyframes widgetFloat{
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-6px); }
+  50%  { transform: translateY(-5px); }
   100% { transform: translateY(0); }
 }
 
-/* Mobile mascot tweaks */
+/* Mobile */
 @media (max-width: 600px){
   #widget-mascot-wrap{
-    right: 72px;
-    bottom: 14px;
-    width: 92px;
-    height: 92px;
+    right: 70px;
+    bottom: 18px;
+    width: 78px;
+    height: 78px;
   }
   #widget-mascot-img{
-    left: -8px;
-    bottom: -6px;
-    width: 220px;
+    left: -10px;
+    bottom: -9px;
+    width: 180px;
   }
 }
