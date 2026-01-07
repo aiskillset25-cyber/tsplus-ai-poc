@@ -133,3 +133,51 @@ body{
 @media (max-width: 600px){
   .topbar{
     padding
+
+    /* =========================================
+   MASCOT WRAP (CLIPPED + STABLE NEXT TO CHAT)
+   ========================================= */
+
+#widget-mascot-wrap{
+  position: fixed;
+  right: 92px;          /* sits left of the Chatwoot button */
+  bottom: 18px;         /* aligned with button */
+  width: 110px;         /* the visible size you want */
+  height: 110px;        /* square box = stable */
+  z-index: 99999;
+  pointer-events: none;
+  overflow: hidden;     /* IMPORTANT: clips the giant PNG */
+  border-radius: 16px;  /* optional: soft edges */
+  animation: widgetFloat 2.6s ease-in-out infinite;
+}
+
+/* The big PNG inside: we position it so only robot shows */
+#widget-mascot-img{
+  position: absolute;
+  left: -10px;          /* adjust cropping horizontally */
+  bottom: -6px;         /* adjust cropping vertically */
+  width: 260px;         /* keep big, but clipped by wrap */
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.22));
+}
+
+@keyframes widgetFloat{
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 600px){
+  #widget-mascot-wrap{
+    right: 72px;
+    bottom: 14px;
+    width: 92px;
+    height: 92px;
+  }
+  #widget-mascot-img{
+    left: -8px;
+    bottom: -6px;
+    width: 220px;
+  }
+}
