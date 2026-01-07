@@ -1,29 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Find ALL carousels on the page (top + Omnilingual)
+  const carousels = document.querySelectorAll(".carousel");
 
-  /* Original carousel (top one) */
-  const mainCarousel = document.querySelector(".carousel");
-  if (mainCarousel) {
-    const slides = mainCarousel.querySelectorAll(".slide");
+  carousels.forEach((carousel) => {
+    const slides = carousel.querySelectorAll(".slide");
+    if (!slides.length) return;
+
     let i = 0;
+
+    // Ensure each carousel starts with only its first slide active
+    slides.forEach((s, idx) => s.classList.toggle("active", idx === 0));
 
     setInterval(() => {
       slides[i].classList.remove("active");
       i = (i + 1) % slides.length;
       slides[i].classList.add("active");
     }, 3500);
-  }
-
-  /* Omnilingual carousel (new one) */
-  const omniCarousel = document.querySelector('[data-carousel="omnilingual"]');
-  if (omniCarousel) {
-    const track = omniCarousel.querySelector(".carousel-track");
-    const slides = omniCarousel.querySelectorAll(".carousel-slide");
-    let index = 0;
-
-    setInterval(() => {
-      index = (index + 1) % slides.length;
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }, 3500);
-  }
-
+  });
 });
