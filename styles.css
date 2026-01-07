@@ -1,4 +1,4 @@
-f:root{
+:root{
   --card-width: 800px;
   --accent1: #ff7a00;
   --accent2: #ffb347;
@@ -92,7 +92,7 @@ body{
   margin-top: 0;
 }
 
-/* --- Carousel --- */
+/* --- Carousel (Existing) --- */
 .carousel{
   margin: 22px auto 0;
   width: 100%;
@@ -122,15 +122,58 @@ body{
   transform: scale(1);
 }
 
+/* =========================================================
+   NEW: Omnilingual Carousel (Track-based)
+   ========================================================= */
+.carousel-block{
+  margin-top: 30px;
+}
+
+.carousel-title{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 10px 0 18px;
+}
+
+/* Match existing carousel width + style */
+.carousel-container{
+  width: 100%;
+  max-width: 680px;        /* match .carousel max-width */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.carousel-track{
+  display: flex;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.carousel-slide{
+  min-width: 100%;
+}
+
+/* Give it a stable height like the first carousel */
+.carousel-slide img{
+  width: 100%;
+  height: 420px;           /* match .carousel height */
+  object-fit: contain;
+  display: block;
+}
 /* ===== MOBILE FIXES ===== */
 @media (max-width: 600px){
   /* Make header text truly centered and not squeezed by the logo */
   .topbar{
     padding: 14px 0 8px;
   }
-.topbar-center {
-  padding-left: 64px;
-}
+
+  .topbar-center {
+    padding-left: 64px;
+  }
 
   .topbar-inner{
     max-width: 100%;
@@ -193,6 +236,15 @@ body{
 
   .carousel{
     max-width: 100%;
+    height: 300px;
+  }
+
+  /* NEW: Omnilingual carousel mobile height matches existing */
+  .carousel-container{
+    max-width: 100%;
+  }
+
+  .carousel-slide img{
     height: 300px;
   }
 }
