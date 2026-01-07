@@ -309,3 +309,34 @@ body{
     width: 46px;
   }
 }
+/* ===========================================
+   CHAT WIDGET MASCOT (FINAL, CLEAN VERSION)
+   =========================================== */
+
+#widget-mascot-img{
+  position: fixed;
+  right: 96px;
+  bottom: 34px;          /* aligned with Chatwoot icon */
+  width: 120px;         /* ~2x Chatwoot button */
+  height: auto;
+  z-index: 99999;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.20));
+  animation: widgetFloat 2.8s ease-in-out infinite;
+}
+
+/* gentle floating */
+@keyframes widgetFloat{
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-7px); }
+  100% { transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 600px){
+  #widget-mascot-img{
+    right: 78px;
+    bottom: 34px;
+    width: 90px;
+  }
+}
