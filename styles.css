@@ -203,60 +203,39 @@ body{
   }
 }
 
-/* =========================================
-   MASCOT (SMALL, NEXT TO CHATWOOT, CLIPPED)
-   ========================================= */
+/* ================================
+   MASCOT (RECTANGULAR PNG, SCALED)
+   ================================ */
 
-/* Hard limit box: prevents “giant” no matter what */
-#widget-mascot-wrap{
-  position: fixed !important;
-  right: 84px !important;
-  bottom: 20px !important;
-
-  width: 88px !important;     /* ~2× chat icon */
-  height: 88px !important;
-
-  z-index: 99999 !important;
-  pointer-events: none !important;
-
-  overflow: hidden !important; /* CLIPS BIG PNG */
-  border-radius: 18px !important;
-
-  animation: widgetFloat 2.4s ease-in-out infinite !important;
-}
-
-/* Big PNG inside, cropped */
 #widget-mascot-img{
-  position: absolute !important;
-  display: block !important;
+  position: fixed;
 
-  left: -12px !important;
-  bottom: -10px !important;
+  /* Put it just left of Chatwoot launcher */
+  right: 92px;
+  bottom: 18px;
 
-  width: 200px !important;   /* stays big, but clipped by wrap */
-  height: auto !important;
+  /* Rectangular image: only control width */
+  width: 140px;     /* adjust 120–160 to taste */
+  height: auto;
 
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.18)) !important;
+  z-index: 99999;
+  pointer-events: none;
+
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.18));
+  animation: widgetFloat 2.6s ease-in-out infinite;
 }
 
 @keyframes widgetFloat{
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-5px); }
+  50%  { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
 
-/* Mobile */
+/* Mobile: smaller + slightly tighter */
 @media (max-width: 600px){
-  #widget-mascot-wrap{
-    right: 70px !important;
-    bottom: 18px !important;
-    width: 74px !important;
-    height: 74px !important;
-  }
-
   #widget-mascot-img{
-    left: -10px !important;
-    bottom: -9px !important;
-    width: 170px !important;
+    right: 78px;
+    bottom: 14px;
+    width: 110px;
   }
 }
