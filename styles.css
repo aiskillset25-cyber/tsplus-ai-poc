@@ -204,36 +204,33 @@ body{
   }
 }
 
-/* =========================================
-   BIG CHAT WIDGET MASCOT (OVERRIDE SAFE)
-   - Always big (desktop + mobile)
-   - In line with Chatwoot launcher
-   ========================================= */
+/* ================================
+   CHAT WIDGET MASCOT (FINAL SIZE)
+   ================================ */
 
 #widget-mascot-img{
-  position: fixed !important;
-  right: 120px !important;     /* sits left of the orange button */
-  bottom: 24px !important;     /* aligned on same line as button */
-  width: 240px !important;     /* BIG like your green highlight */
-  height: auto !important;
-  z-index: 99999 !important;
-  pointer-events: none !important;
-  filter: drop-shadow(0 14px 28px rgba(0,0,0,0.25)) !important;
-  animation: widgetFloat 3s ease-in-out infinite !important;
+  position: fixed;
+  right: 96px;
+  bottom: 28px;            /* aligned with widget */
+  width: 110px;           /* ~1.6× Chatwoot button */
+  height: auto;
+  z-index: 99999;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.22));
+  animation: widgetFloat 2.8s ease-in-out infinite;
 }
 
-/* floating motion */
 @keyframes widgetFloat{
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-8px); }
+  50%  { transform: translateY(-7px); }
   100% { transform: translateY(0); }
 }
 
-/* Mobile: keep it BIG (not small) */
+/* Mobile */
 @media (max-width: 600px){
   #widget-mascot-img{
-    right: 105px !important;
-    bottom: 20px !important;
-    width: 200px !important;
+    right: 78px;
+    bottom: 22px;
+    width: 86px;         /* still bigger than widget on mobile */
   }
 }
