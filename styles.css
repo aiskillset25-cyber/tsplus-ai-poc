@@ -248,3 +248,36 @@ body{
     height: 300px;
   }
 }
+/* Floating chat widget mascot */
+#widget-mascot{
+  position: fixed;
+  right: 96px;
+  bottom: 92px;
+  z-index: 99999;
+  animation: mascotFloat 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+#widget-mascot img{
+  width: 90px;        /* SMALL, elegant size */
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.18));
+}
+
+/* gentle floating animation */
+@keyframes mascotFloat{
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-7px); }
+  100% { transform: translateY(0); }
+}
+
+/* Mobile adjustment */
+@media (max-width: 600px){
+  #widget-mascot{
+    right: 78px;
+    bottom: 84px;
+  }
+  #widget-mascot img{
+    width: 72px;
+  }
+}
