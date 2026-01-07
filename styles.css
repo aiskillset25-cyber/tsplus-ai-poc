@@ -205,32 +205,32 @@ body{
 }
 
 /* ================================
-   CHAT WIDGET MASCOT (FINAL SIZE)
+   CHAT WIDGET MASCOT (ALIGNED & CLEAN)
    ================================ */
 
 #widget-mascot-img{
   position: fixed;
-  right: 96px;
-  bottom: 28px;            /* aligned with widget */
-  width: 110px;           /* ~1.6× Chatwoot button */
+  right: 86px;            /* sits just left of chat icon */
+  bottom: 24px;          /* vertically aligned */
+  width: 72px;           /* slightly bigger than widget */
   height: auto;
   z-index: 99999;
   pointer-events: none;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.22));
-  animation: widgetFloat 2.8s ease-in-out infinite;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.22));
+  animation: widgetFloat 2.6s ease-in-out infinite;
 }
 
 @keyframes widgetFloat{
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-7px); }
+  50%  { transform: translateY(-5px); }
   100% { transform: translateY(0); }
 }
 
 /* Mobile */
 @media (max-width: 600px){
   #widget-mascot-img{
-    right: 78px;
-    bottom: 22px;
-    width: 86px;         /* still bigger than widget on mobile */
+    right: 70px;
+    bottom: 20px;
+    width: 60px;
   }
 }
