@@ -309,34 +309,34 @@ body{
     width: 46px;
   }
 }
-/* ===========================================
-   CHAT WIDGET MASCOT (FINAL, CLEAN VERSION)
-   =========================================== */
+/* ================================
+   BIG CHAT WIDGET MASCOT (FINAL)
+   ================================ */
 
 #widget-mascot-img{
   position: fixed;
-  right: 96px;
-  bottom: 34px;          /* aligned with Chatwoot icon */
-  width: 120px;         /* ~2x Chatwoot button */
+  right: 110px;      /* distance from chat button */
+  bottom: 28px;      /* align vertically with widget */
+  width: 220px;     /* BIG & readable */
   height: auto;
   z-index: 99999;
   pointer-events: none;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.20));
-  animation: widgetFloat 2.8s ease-in-out infinite;
+  animation: widgetFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,0.25));
 }
 
-/* gentle floating */
+/* floating motion */
 @keyframes widgetFloat{
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-7px); }
+  50%  { transform: translateY(-8px); }
   100% { transform: translateY(0); }
 }
 
 /* Mobile */
 @media (max-width: 600px){
   #widget-mascot-img{
-    right: 78px;
-    bottom: 34px;
-    width: 90px;
+    right: 88px;
+    bottom: 20px;
+    width: 160px;
   }
 }
