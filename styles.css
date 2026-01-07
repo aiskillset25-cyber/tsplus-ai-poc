@@ -132,31 +132,100 @@ body{
 /* ===== MOBILE FIXES ===== */
 @media (max-width: 600px){
   .topbar{
-    padding
+    padding: 14px 0 8px;
+  }
 
-    /* =========================================
+  .topbar-center{
+    padding-left: 64px;
+  }
+
+  .topbar-inner{
+    max-width: 100%;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .topbar-left{
+    position: absolute;
+    left: 14px;
+    top: 0;
+  }
+
+  .logo{
+    height: 54px;
+  }
+
+  .topbar-center{
+    width: 100%;
+    text-align: center;
+    padding-top: 2px;
+  }
+
+  .topbar-title{
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  .topbar-subtitle{
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 2px;
+  }
+
+  .topbar-divider{
+    height: 3px;
+    margin-top: 10px;
+    width: calc(100% - 28px);
+  }
+
+  .stage{
+    padding: 18px 12px 44px;
+  }
+
+  .card{
+    padding: 22px 16px;
+    border-radius: 18px;
+  }
+
+  .card h1{
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .carousel{
+    max-width: 100%;
+    height: 300px;
+  }
+}
+
+/* =========================================
    MASCOT WRAP (CLIPPED + STABLE NEXT TO CHAT)
    ========================================= */
 
 #widget-mascot-wrap{
   position: fixed;
-  right: 92px;          /* sits left of the Chatwoot button */
-  bottom: 18px;         /* aligned with button */
-  width: 110px;         /* the visible size you want */
-  height: 110px;        /* square box = stable */
+  right: 92px;
+  bottom: 18px;
+  width: 110px;
+  height: 110px;
   z-index: 99999;
   pointer-events: none;
-  overflow: hidden;     /* IMPORTANT: clips the giant PNG */
-  border-radius: 16px;  /* optional: soft edges */
+  overflow: hidden;
+  border-radius: 16px;
   animation: widgetFloat 2.6s ease-in-out infinite;
 }
 
-/* The big PNG inside: we position it so only robot shows */
+/* The big PNG inside: position so only robot shows */
 #widget-mascot-img{
   position: absolute;
-  left: -10px;          /* adjust cropping horizontally */
-  bottom: -6px;         /* adjust cropping vertically */
-  width: 260px;         /* keep big, but clipped by wrap */
+  left: -10px;
+  bottom: -6px;
+  width: 260px;
   height: auto;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,0.22));
 }
@@ -167,7 +236,7 @@ body{
   100% { transform: translateY(0); }
 }
 
-/* Mobile */
+/* Mobile mascot tweaks */
 @media (max-width: 600px){
   #widget-mascot-wrap{
     right: 72px;
