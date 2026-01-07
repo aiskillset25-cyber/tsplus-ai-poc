@@ -207,28 +207,36 @@ body{
    MASCOT (SMALL, NEXT TO CHATWOOT, CLIPPED)
    ========================================= */
 
-/* The visible box (roughly 2× the Chatwoot button) */
+/* Hard limit box: prevents “giant” no matter what */
 #widget-mascot-wrap{
-  position: fixed;
-  right: 84px;          /* left of Chatwoot icon */
-  bottom: 22px;         /* aligned with icon */
-  width: 92px;
-  height: 92px;
-  z-index: 99999;
-  pointer-events: none;
-  overflow: hidden;     /* CLIPS the big PNG */
-  border-radius: 18px;
-  animation: widgetFloat 2.4s ease-in-out infinite;
+  position: fixed !important;
+  right: 84px !important;
+  bottom: 20px !important;
+
+  width: 88px !important;     /* ~2× chat icon */
+  height: 88px !important;
+
+  z-index: 99999 !important;
+  pointer-events: none !important;
+
+  overflow: hidden !important; /* CLIPS BIG PNG */
+  border-radius: 18px !important;
+
+  animation: widgetFloat 2.4s ease-in-out infinite !important;
 }
 
-/* The big PNG inside (we crop it to show the robot) */
+/* Big PNG inside, cropped */
 #widget-mascot-img{
-  position: absolute;
-  left: -12px;          /* crop X */
-  bottom: -10px;        /* crop Y */
-  width: 210px;         /* keep big, but clipped */
-  height: auto;
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.18));
+  position: absolute !important;
+  display: block !important;
+
+  left: -12px !important;
+  bottom: -10px !important;
+
+  width: 200px !important;   /* stays big, but clipped by wrap */
+  height: auto !important;
+
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.18)) !important;
 }
 
 @keyframes widgetFloat{
@@ -240,14 +248,15 @@ body{
 /* Mobile */
 @media (max-width: 600px){
   #widget-mascot-wrap{
-    right: 70px;
-    bottom: 18px;
-    width: 78px;
-    height: 78px;
+    right: 70px !important;
+    bottom: 18px !important;
+    width: 74px !important;
+    height: 74px !important;
   }
+
   #widget-mascot-img{
-    left: -10px;
-    bottom: -9px;
-    width: 180px;
+    left: -10px !important;
+    bottom: -9px !important;
+    width: 170px !important;
   }
 }
