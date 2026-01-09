@@ -43,4 +43,44 @@
         <img src="omni-1.png.png" class="slide active">
         <img src="omni-2.png.png" class="slide">
         <img src="omni-3.png.png" class="slide">
-        <img src="omni-4.png.p
+        <img src="omni-4.png.png" class="slide">
+      </div>
+
+      <!-- ===========================
+           TSplus Voice Agents (Soon)
+           =========================== -->
+      <div class="voice-agents-soon">
+        <img src="voice-agent-placeholder.png" alt="TSplus Voice Agents">
+        <div class="voice-agents-text">
+          <h2>TSplus Voice Agents</h2>
+          <p>Autonomous AI Phone Support & Sales Assistants</p>
+          <span>Coming Soon</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Floating Mascot -->
+  <img id="widget-mascot-img" src="widget-mascot.png.png" alt="TSplus mascot" />
+
+  <!-- Chatwoot -->
+  <script>
+    (function(d,t) {
+      var BASE_URL="https://app.chatwoot.com";
+      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=BASE_URL+"/packs/js/sdk.js";
+      g.async = true;
+      s.parentNode.insertBefore(g,s);
+      g.onload=function(){
+        window.chatwootSDK.run({
+          websiteToken: 'TbQi4XzRYKTb2GffjD69dtQX',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document,"script");
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
