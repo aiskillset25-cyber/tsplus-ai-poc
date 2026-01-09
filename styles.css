@@ -241,3 +241,63 @@ body{
   }
 
 }
+/* ================================
+   TSplus Voice Agents (Coming Soon)
+   ================================ */
+
+.voice-agents-soon{
+  margin-top: 60px;
+  padding: 34px 28px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  opacity: 0.55;              /* visually “inactive” */
+  pointer-events: none;       /* non-clickable */
+}
+
+.voice-agents-soon img{
+  width: 120px;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+.voice-agents-text h2{
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #1b1f2a;
+}
+
+.voice-agents-text p{
+  margin: 6px 0 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+}
+
+.voice-agents-text span{
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff7a00;
+  letter-spacing: 0.4px;
+}
+
+/* Mobile */
+@media (max-width: 600px){
+  .voice-agents-soon{
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .voice-agents-soon img{
+    width: 90px;
+  }
+}
