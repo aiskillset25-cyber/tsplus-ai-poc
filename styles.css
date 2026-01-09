@@ -232,3 +232,12 @@ body{
     width: 260px;
   }
 }
+/* ===== MOBILE SAFETY SPACE FOR FLOATING MASCOT ===== */
+@media (max-width: 600px){
+
+  /* Push content up so mascot never overlaps it */
+  body{
+    padding-bottom: 260px;   /* space reserved for mascot */
+  }
+
+}
