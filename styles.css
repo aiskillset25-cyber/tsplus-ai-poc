@@ -298,3 +298,12 @@ body{
     margin-top: 50px;
   }
 }
+/* Live Avatars block */
+.avatars-soon{
+  margin-top: 28px;
+}
+
+.avatars-soon img{
+  width: 150px;
+  opacity: 0.85;
+}
