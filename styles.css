@@ -246,32 +246,30 @@ body{
    ================================ */
 
 .voice-agents-soon{
-  margin: 70px auto 10px;
+  margin: 70px auto 20px;
   padding: 46px 40px;
   max-width: 680px;
   background: #ffffff;
   border-radius: 22px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  opacity: 0.35;                 /* faded */
+  gap: 34px;
 }
 
 .voice-agents-soon img{
-  width: 120px;
+  width: 130px;
   height: auto;
-  opacity: 0.55;
 }
 
 .voice-agents-text{
-  text-align: center;            /* CENTER everything */
+  text-align: center;
 }
 
 .voice-agents-text h2{
   margin: 0;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 800;
   color: #1b1f2a;
 }
