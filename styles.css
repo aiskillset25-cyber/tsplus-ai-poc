@@ -2,12 +2,18 @@
   --card-width: 800px;
   --accent1: #ff7a00;
   --accent2: #ffb347;
+
+  /* Status colors */
+  --live-green: #16a34a;
+  --live-green-ink: #166534;
+  --live-green-bg: #eaf7ee;
 }
 
 body{
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   background: #f3f6fb;
+  color: #1b1f2a;
 }
 
 /* ===== HEADER ===== */
@@ -48,14 +54,12 @@ body{
 .topbar-title{
   font-size: 30px;
   font-weight: 800;
-  color: #1b1f2a;
   letter-spacing: 0.4px;
 }
 
 .topbar-subtitle{
   font-size: 38px;
   font-weight: 900;
-  color: #1b1f2a;
   letter-spacing: 0.5px;
   margin-top: 4px;
 }
@@ -129,14 +133,152 @@ body{
   margin: 30px 0 18px;
 }
 
+/* ================================
+   Feature blocks (Voice / Avatars)
+   ================================ */
+.feature{
+  margin: 70px auto 20px;
+  padding: 44px 40px;
+  max-width: 680px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 34px;
+  text-align: left;
+}
+
+.feature-img{
+  width: 140px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.feature-body{
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.feature-title{
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.feature-subtitle{
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: #5f6777;
+}
+
+/* Coming soon label (Avatars only) */
+.coming-label{
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent1);
+  background: rgba(255,122,0,0.10);
+  border: 1px solid rgba(255,122,0,0.25);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.feature-avatars{
+  margin-top: 26px;
+}
+
+.feature-img-avatars{
+  width: 210px;
+  opacity: 0.92;
+}
+
+/* ===== LIVE CALLOUT (Voice Agents) ===== */
+.live-callout{
+  margin-top: 14px;
+  padding: 14px 14px 12px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(22,163,74,0.08), rgba(22,163,74,0.04));
+  border: 1px solid rgba(22,163,74,0.18);
+}
+
+.live-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--live-green-ink);
+  background: var(--live-green-bg);
+  border: 1px solid rgba(22,163,74,0.18);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.live-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--live-green);
+  box-shadow: 0 0 0 3px rgba(22,163,74,0.15);
+}
+
+.live-desc{
+  margin: 10px 0 10px;
+  font-size: 15px;
+}
+
+.call-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  box-shadow: 0 10px 18px rgba(255,122,0,0.20);
+  font-weight: 900;
+  width: fit-content;
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+}
+
+.call-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 22px rgba(255,122,0,0.26);
+  opacity: 0.98;
+}
+
+.call-btn-label{
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+
+.call-btn-number{
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.live-note{
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #5f6777;
+  line-height: 1.4;
+}
+
 /* ===== MOBILE FIXES ===== */
 @media (max-width: 600px){
   .topbar{
     padding: 14px 0 8px;
-  }
-
-  .topbar-center{
-    padding-left: 64px;
   }
 
   .topbar-inner{
@@ -166,13 +308,11 @@ body{
 
   .topbar-title{
     font-size: 18px;
-    font-weight: 800;
     line-height: 1.15;
   }
 
   .topbar-subtitle{
     font-size: 26px;
-    font-weight: 900;
     line-height: 1.1;
     margin-top: 2px;
   }
@@ -201,12 +341,31 @@ body{
     max-width: 100%;
     height: 300px;
   }
+
+  .feature{
+    flex-direction: column;
+    padding: 34px 22px;
+    gap: 16px;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .feature-body{
+    text-align: center;
+  }
+
+  .call-btn{
+    margin: 0 auto;
+  }
+
+  .feature-img-avatars{
+    width: 170px;
+  }
 }
 
 /* ================================
    MASCOT (RECTANGULAR PNG, SCALED)
    ================================ */
-
 #widget-mascot-img{
   position: fixed;
   right: 40px;
@@ -231,134 +390,8 @@ body{
     bottom: 14px;
     width: 260px;
   }
-}
 
-/* ===== MOBILE SAFETY SPACE FOR FLOATING MASCOT ===== */
-@media (max-width: 600px){
   body{
     padding-bottom: 260px;
-  }
-}
-
-/* ================================
-   TSplus Voice Agents (Block)
-   ================================ */
-
-.voice-agents-soon{
-  margin: 70px auto 20px;
-  padding: 46px 40px;
-  max-width: 680px;
-  background: #ffffff;
-  border-radius: 22px;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 34px;
-}
-
-.voice-agents-soon img{
-  width: 130px;
-  height: auto;
-}
-
-.voice-agents-text{
-  text-align: center;
-}
-
-.voice-agents-text h2{
-  margin: 0;
-  font-size: 30px;
-  font-weight: 800;
-  color: #1b1f2a;
-}
-
-.voice-agents-text p{
-  margin: 6px 0 0;
-  font-size: 15px;
-  color: #5f6777;
-}
-
-.voice-agents-text span{
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #ff7a00;
-  letter-spacing: 1px;
-}
-
-/* ===== NEW: LIVE MESSAGE STYLES (Voice Agents) ===== */
-.voice-agents-live .live-message{
-  margin-top: 14px;
-}
-
-.voice-agents-live .live-title{
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #ff7a00;
-  margin-bottom: 8px;
-}
-
-.voice-agents-live .live-lines{
-  font-size: 15px;
-  color: #1b1f2a;
-  line-height: 1.45;
-}
-
-.voice-agents-live .phone-link{
-  font-weight: 900;
-  color: #ff7a00;
-  text-decoration: none;
-  border-bottom: 1px dashed rgba(255,122,0,0.7);
-  padding-bottom: 1px;
-  white-space: nowrap;
-}
-
-.voice-agents-live .phone-link:hover{
-  opacity: 0.85;
-}
-
-.voice-agents-live .live-note{
-  margin-top: 10px;
-  font-size: 13px;
-  color: #5f6777;
-  line-height: 1.4;
-}
-
-/* Mobile */
-@media (max-width: 600px){
-  .voice-agents-soon{
-    flex-direction: column;
-    padding: 36px 22px;
-    gap: 18px;
-    margin-top: 50px;
-  }
-}
-
-/* Live Avatars block */
-.avatars-soon{
-  margin-top: 28px;
-}
-
-.avatars-soon img{
-  width: 150px;
-  opacity: 0.85;
-}
-
-/* ==============================
-   BIG Live Avatar (Readable Bubble)
-   ============================== */
-.avatars-soon img{
-  width: 210px;
-  height: auto;
-}
-
-@media (max-width: 600px){
-  .avatars-soon img{
-    width: 160px;
   }
 }
